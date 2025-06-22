@@ -1,0 +1,444 @@
+Q.1. Write a simple program in HTML that displays the heading "HTML defines the content and structure of your website" on the web browser.
+<html>
+<head>
+    <title>PW student</title>
+</head>
+<body>
+    <h1>HTML defines the content and structure of your website</h1>
+</body>
+</html>
+
+Q.2. Explain the purpose of comments in HTML and provide an example of how to use comments in an HTML document.
+Explanation:
+Comments in HTML are used to leave notes. These comments are not visible in the browser.
+Example:
+<!-- This is a comment. It won't be displayed in the browser. -->
+<p>This is a visible paragraph.</p>
+
+Q.3. Write an HTML program that includes a heading, a paragraph of text, a horizontal line, and a line break. Arrange these elements to create a simple web page layout.
+<html>
+<head>
+    <title>Layout</title>
+</head>
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>This is a paragraph.</p>
+    <hr>
+    <p>This is another line of text.<br>Here is a line break above this line.</p>
+</body>
+</html>
+
+Q.4. Write a short note on Tag and element with an example.
+Note:
+A Tag is a keyword enclosed in angle brackets like <p>, <h1>, <a>, etc.
+An Element includes the start tag, content, and end tag.
+Example:
+<p>This is a paragraph element.</p>
+In the above example:
+<p> is the opening tag
+</p> is the closing tag
+Together, they form an element.
+
+Q.5. What is the DOCTYPE Declaration in HTML?
+Answer:
+The <!DOCTYPE html> declaration tells the browser to use the latest version of HTML (HTML5).
+
+#Core HTML Practical Tasks
+
+Task 1: Display various styled text as shown
+Answer:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Styling</title>
+</head>
+<body>
+    <b>This text will be bolded.</b><br><br>
+    <i>This text will be italic.</i><br><br>
+    <u>This text will be underlined</u><br><br>
+    <mark>This text will be highlighted</mark><br><br>
+    This is normal text <sup>This will be super scripted</sup> This is normal again<br><br>
+    This is normal text <sub>This text will be subscripted</sub><br><br>
+    Normal Text <small>Small Text</small><br><br>
+    <del>This text will be deleted</del>
+</body>
+</html>
+
+Task 2: Webpage with Navigation Links.
+Answers:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Links</title>
+</head>
+<body>
+    <h2>Navigate Me:</h2>
+    <p>Take me to <a href="https://www.pwskills.com" target="_blank">PW Skills</a> to buy a course.</p>
+    <p>Take me to <a href="https://developer.mozilla.org" target="_blank">MDN docs</a> to know more about Web Development.</p>
+    <p>Take me to <a href="https://lab.pwskills.com" target="_blank">PW Skills Lab</a> to practice live coding.</p>
+</body>
+</html>
+
+Task 3. Build a simple blog web page with 3 pages: Home, Web Development, and Web Design.
+Answers:
+File 1: home.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="webdev.html">Web Development</a> |
+        <a href="webdesign.html">Web Design</a>
+    </nav>
+    <h1>Welcome to My Blog</h1>
+    <p>Hello, I’m a web developer Harshal</p>
+</body>
+</html>
+
+File 2: webdev.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Development</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="webdev.html">Web Development</a> |
+        <a href="webdesign.html">Web Design</a>
+    </nav>
+    <h1>Web Development</h1>
+    <p>Web development focuses on building websites using coding languages like HTML, CSS, and JavaScript.</p>
+</body>
+</html>
+
+File 3: webdesign.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Design</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="webdev.html">Web Development</a> |
+        <a href="webdesign.html">Web Design</a>
+    </nav>
+    <h1>Web Design</h1>
+    <p>Web design deals with the visual layout and user experience of websites.</p>
+</body>
+</html>
+
+Task 4.Create an ordered list of HTML tags. Each item must include tag name and info.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Tags List</title>
+</head>
+<body>
+    <h2>Ordered List of HTML Tags</h2>
+    <ol>
+        <li>&lt;html&gt; - Defines the root of an HTML document.</li>
+        <li>&lt;head&gt; - Contains metadata/information for the document.</li>
+        <li>&lt;title&gt; - Sets the title of the document shown in the browser tab.</li>
+        <li>&lt;body&gt; - Contains the visible page content.</li>
+        <li>&lt;h1&gt; to &lt;h6&gt; - Define HTML headings.</li>
+        <li>&lt;p&gt; - Defines a paragraph.</li>
+        <li>&lt;a&gt; - Creates a hyperlink.</li>
+    </ol>
+</body>
+</html>
+
+Task 5. Create a description list of full stack web development tech stack using <dl>.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Description List</title>
+</head>
+<body>
+    <h2>Full Stack Web Development Tech Stack</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Used for creating the structure of web pages.</dd>
+        <dt>CSS</dt>
+        <dd>Used for styling and visual layout of web pages.</dd>
+        <dt>JavaScript</dt>
+        <dd>Used to add interactivity and dynamic behavior to websites.</dd>
+        <dt>Node.js</dt>
+        <dd>A runtime environment to execute JavaScript on the server side.</dd>
+        <dt>MongoDB</dt>
+        <dd>A NoSQL database used to store data in flexible, JSON-like documents.</dd>
+    </dl>
+</body>
+</html>
+
+Task 6. Create an ordered list of full stack tech stack (HTML, CSS, JS) with a table for each.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Stack Details</title>
+</head>
+<body>
+    <ol>
+        <li><h3>HTML</h3>
+            <table border="1">
+                <tr>
+                    <th>Primary Use Cases</th>
+                    <th>Key Features/Benefits</th>
+                </tr>
+                <tr>
+                    <td>Building the structure of web pages</td>
+                    <td>
+                        <ul>
+                            <li>Simple and easy to learn</li>
+                            <li>Compatible with all web browsers</li>
+                            <li>Allows for semantic markup</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li><h3>CSS</h3>
+            <table border="1">
+                <tr>
+                    <th>Primary Use Cases</th>
+                    <th>Key Features/Benefits</th>
+                </tr>
+                <tr>
+                    <td>Styling and layout of web pages</td>
+                    <td>
+                        <ul>
+                            <li>Separation of content and design</li>
+                            <li>Enables responsive design</li>
+                            <li>Wide range of styling options</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li><h3>JavaScript</h3>
+            <table border="1">
+                <tr>
+                    <th>Primary Use Cases</th>
+                    <th>Key Features/Benefits</th>
+                </tr>
+                <tr>
+                    <td>Making web pages interactive</td>
+                    <td>
+                        <ul>
+                            <li>Client-side scripting</li>
+                            <li>Works with HTML & CSS</li>
+                            <li>Supports asynchronous programming</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+</body>
+</html>
+
+Task 7. Build a complex nested list for a multi-level Table of Contents.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table of Contents</title>
+</head>
+<body>
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#">Part 1: Introduction</a></li>
+        <li><a href="#">Part 2: Getting Started</a>
+            <ul>
+                <li><a href="#">2.1 Installing the Software</a></li>
+                <li><a href="#">2.2 Creating a New Project</a>
+                    <ul>
+                        <li><a href="#">2.2.1 Project Templates</a></li>
+                        <li><a href="#">2.2.2 Customizing Settings</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">2.3 Exploring the Interface</a>
+                    <ul>
+                        <li><a href="#">2.3.1 Toolbar Features</a></li>
+                        <li><a href="#">2.3.2 Panel Layout</a>
+                            <ul>
+                                <li><a href="#">2.3.2.1 Docking Panels</a></li>
+                                <li><a href="#">2.3.2.2 Tabbed Interface</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Part 3: Advanced Topics</a>
+            <ul>
+                <li><a href="#">3.1 Working with Plugins</a>
+                    <ul>
+                        <li><a href="#">3.1.1 Installing Plugins</a></li>
+                        <li><a href="#">3.1.2 Plugin Configuration</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">3.2 Customizing the UI</a>
+                    <ul>
+                        <li><a href="#">3.2.1 Changing Themes</a></li>
+                        <li><a href="#">3.2.2 Configuring Shortcuts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">3.3 Optimizing Performance</a>
+                    <ul>
+                        <li><a href="#">3.3.1 Caching Strategies</a></li>
+                        <li><a href="#">3.3.2 Resource Minification</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Part 4: Conclusion</a></li>
+    </ul>
+</body>
+</html>
+
+Task 8. Create a table to display a conference schedule with proper rowspan, colspan, and cellpadding.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conference Schedule</title>
+</head>
+<body>
+    <h2>Conference Schedule</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Time</th>
+            <th>Room 1</th>
+            <th>Room 2</th>
+            <th>Room 3</th>
+            <th>Room 4</th>
+        </tr>
+        <tr>
+            <td>9:00 AM - 10:00 AM</td>
+            <td rowspan="2">Keynote</td>
+            <td>Session A</td>
+            <td>Session B</td>
+            <td rowspan="2">Session C</td>
+        </tr>
+        <tr>
+            <td>10:30 AM - 11:30 AM</td>
+            <td>Session D</td>
+            <td>Session E</td>
+            <td>Session F</td>
+        </tr>
+        <tr>
+            <td>12:00 PM - 1:00 PM</td>
+            <td colspan="4" style="text-align:center;">Lunch Break</td>
+        </tr>
+        <tr>
+            <td>1:00 PM - 2:00 PM</td>
+            <td>
+                Session G<br>
+                Session K
+            </td>
+            <td>Session H</td>
+            <td>
+                Session I<br>
+                Session L
+            </td>
+            <td>
+                Session J<br>
+                Session M
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+Media and Forms Section
+
+1. Create an image gallery that holds multiple images
+Answers:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+</head>
+<body>
+    <h2>Image Gallery</h2>
+    <img src="image1.jpg" alt="Image 1" width="200">
+    <img src="image2.jpg" alt="Image 2" width="200">
+    <img src="image3.jpg" alt="Image 3" width="200">
+    <!-- Add more as needed -->
+</body>
+</html>
+
+2. Use <video> and <audio> tags to display media with controls
+Answers:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media</title>
+</head>
+<body>
+    <h2>Video and Audio</h2>
+    <video width="320" height="240" controls>
+        <source src="sample-video.mp4" type="video/mp4">
+        Your video.
+    </video><br><br>
+    <audio controls>
+        <source src="sample-audio.mp3" type="audio/mp3">
+        Your audio.
+    </audio>
+</body>
+</html>
+
+3. Modify the media to auto-play and loop
+Answers:
+<video width="320" height="240" autoplay loop muted>
+    <source src="sample-video.mp4" type="video/mp4">
+</video><br>
+<audio autoplay loop>
+    <source src="sample-audio.mp3" type="audio/mp3">
+</audio>
+
+4. Use <iframe> to embed the PhysicsWallah Wikipedia page
+Answers:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embed PW Wiki</title>
+</head>
+<body>
+    <h2>Embedded PhysicsWallah Wikipedia Page</h2>
+    <iframe src="https://en.wikipedia.org/wiki/Physics_Wallah" width="100%" height="500"></iframe>
+</body>
+</html>
+
+5. Create sign-up and sign-in forms with validation
+a. Sign-Up Form with Validation
+Answers:
+<form>
+    <label>First Name: <input type="text" name="fname" required minlength="3"></label><br>
+    <label>Last Name: <input type="text" name="lname" required minlength="3"></label><br>
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Password: <input type="password" name="password" required minlength="6"></label><br>
+    <label>Confirm Password: <input type="password" name="confirm_password" required></label><br>
+    <label>Age: <input type="number" name="age" min="1" max="150" required></label><br>
+    <label>Gender:
+        <select name="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+    </label><br>
+    <label><input type="checkbox" required> I agree to terms and conditions</label><br><br>
+    <input type="submit" value="Sign Up">
+</form>
+
+b. Sign-In Form
+Answers:
+<form>
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Password: <input type="password" name="password" required></label><br><br>
+    <input type="submit" value="Sign In">
+</form>
