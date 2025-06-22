@@ -1,1 +1,1420 @@
+Q.1:Create a simple page with some div tags and show different ways to add CSS as well as what happens when you target the same elements with inline, internal, and external CSS. Also, utilize comments in the project where required.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS </title>
+    <style>
+        /* Internal CSS comment */
+        .box {
+            background-color: lightblue;
+            color: black;
+            padding: 20px;
+        }
+    </style>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Inline CSS overrides everything -->
+    <div class="box" style="background-color: yellow; color: red;">
+        This is a div with INLINE CSS
+    </div>
+    <!-- Internal CSS applied here -->
+    <div class="box">
+        This is a div with INTERNAL CSS
+    </div>
+    <!-- External CSS applied -->
+    <div class="external-box">
+        This is a div with EXTERNAL CSS
+    </div>
+</body>
+</html>
 
+style.css:-
+/* External CSS comment */
+.external-box {
+    background-color: lightgreen;
+    color: darkblue;
+    padding: 20px;
+}
+
+Q.2.Build an HTML page with multiple paragraphs, each assigned a unique class name. Write CSS rules using class selectors to apply distinct styling to each paragraph. Follow the BEM naming convention and use comments.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BEM Paragraphs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="para para--intro">This is the introduction paragraph.</p>
+  <p class="para para--body">This is the body paragraph with main content.</p>
+  <p class="para para--conclusion">This is the conclusion paragraph.</p>
+</body>
+</html>
+
+style.css:-
+/* Base block for all paragraphs */
+.para {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+}
+/* Modifier for introduction */
+.para--intro {
+  background-color: #f0f8ff;
+  color: #333;
+}
+/* Modifier for body */
+.para--body {
+  background-color: #e0ffe0;
+  color: #222;
+}
+/* Modifier for conclusion */
+.para--conclusion {
+  background-color: #fff0f0;
+  color: #111;
+}
+
+Q.3:Develop an HTML form with various input elements. Use CSS to style the form, including setting background colors for input fields. Create a custom color palette for the form elements, and demonstrate how to apply opacity to one of the form sections.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form class="form">
+    <div class="form__section">
+      <label>Name:</label>
+      <input type="text" class="form__input">
+    </div>
+    <div class="form__section form__section--transparent">
+      <label>Email:</label>
+      <input type="email" class="form__input">
+    </div>
+    <div class="form__section">
+      <label>Password:</label>
+      <input type="password" class="form__input">
+    </div>
+    <button class="form__button">Submit</button>
+  </form>
+</body>
+</html>
+
+style.css:-
+.form {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #e8f0fe;
+  border-radius: 10px;
+}
+.form__section {
+  margin-bottom: 15px;
+}
+.form__section--transparent {
+  opacity: 0.6;
+}
+.form__input {
+  width: 100%;
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form__button {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+More on CSS - 
+Question 1:
+Create a navigation bar similar to the below-mentioned image. The navigation bar must contain 5 navigation links properly placed using the CSS box model. The navigation items must change their text color on hover.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="navbar__item">Home</a>
+    <a href="#" class="navbar__item">About Us</a>
+    <a href="#" class="navbar__item">Contact</a>
+    <a href="#" class="navbar__item">Blog</a>
+    <a href="#" class="navbar__item">Login</a>
+  </nav>
+</body>
+</html>
+
+style.css:-
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #8bb1f5;
+  padding: 15px;
+}
+.navbar__item {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+.navbar__item:hover {
+  color: black;
+}
+
+Question 2:
+Create a div centered with an image and paragraph similar to the image mentioned.
+Answer:-
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Div</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center-box">
+    <img src="image.jpg" alt="Course Image" class="center-box__img">
+    <p class="center-box__text">Full stack Web Development</p>
+  </div>
+</body>
+</html>
+
+style.css:-
+.center-box {
+  text-align: center;
+  margin-top: 50px;
+}
+.center-box__img {
+  width: 300px;
+  border-radius: 10px;
+}
+.center-box__text {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+Q.3:Create a navigation bar similar to Question 1. For each navigation item, use a different border style.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Borders Nav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="navbar__item border1">Home</a>
+    <a href="#" class="navbar__item border2">About Us</a>
+    <a href="#" class="navbar__item border3">Contact</a>
+    <a href="#" class="navbar__item border4">Blog</a>
+    <a href="#" class="navbar__item border5">Login</a>
+  </nav>
+</body>
+</html>
+
+style.css:-
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #8bb1f5;
+  padding: 15px;
+}
+.navbar__item {
+  margin: 0 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.border1 {
+  border: 2px solid white;
+}
+.border2 {
+  border: 2px dotted white;
+}
+.border3 {
+  border: 2px dashed white;
+}
+.border4 {
+  border: 2px double white;
+}
+.border5 {
+  border: 2px groove white;
+}
+
+Q.4:Create a simple webpage with an image and make the image circular using border-radius.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circular Image</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="circle-img-container">
+    <img src="image.jpg" alt="Profile" class="circle-img">
+  </div>
+</body>
+</html>
+
+style.css:-
+.circle-img-container {
+  text-align: center;
+  margin-top: 50px;
+}
+.circle-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+Q.5:Create a simple blog website about Google Fonts. The webpage must have the heading with “Oswald” font aligned center, an image below the heading, and a paragraph using “Montserrat” font.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Fonts Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="heading">Google Fonts</h1>
+  <img src="google-fonts.jpg" alt="Google Fonts" class="font-img">
+  <p class="font-text">Google Fonts offer a wide range of beautiful and free fonts for use on websites. This paragraph uses the Montserrat font for modern and clean readability.</p>
+</body>
+</html>
+
+style.css:-
+body {
+  text-align: center;
+  padding: 30px;
+}
+.heading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+}
+.font-img {
+  width: 300px;
+  margin: 20px 0;
+}
+.font-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+Q.6:Create a simple website as mentioned in the below image. You can get the assets by visiting https://pwskills.com/about-us.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="about-heading">About Us</h1>
+  <p class="about-text">
+    PW SKILLS mission is to generate through every student/professional a network towards jobs and change their attitude and perspective from “How Can I do It” to “Of Course I Can do it”. We aim to do this by providing economical yet fulfilling courses on effective skills, while being tech-forward to provide, simplify, and speed-up this ability to be successful in life.
+  </p>
+  <div class="about-image">
+    <img src="pwskills-about.jpg" alt="PW Event">
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+.about-heading {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.about-text {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.about-image img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+Q.7:Create a simple webpage with a card similar to question number 2. The card must be semi-transparent as default and on hovering the card must be displayed clearly. Use CSS opacity.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <img src="webdev-card.jpg" alt="Web Development Card" class="card__img">
+    <p class="card__text"><strong>Course Name:</strong> PW SKills web development</p>
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+.card {
+  text-align: center;
+  width: 400px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #dfffee;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.card:hover {
+  opacity: 1;
+}
+.card__img {
+  width: 100%;
+  border-radius: 10px;
+}
+.card__text {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+Q.8.Create a simple list of items as mentioned in the below image.
+Answer:-
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Requirements</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Requirements</h2>
+  <ol type="i">
+    <li>System with minimum i3 processor or better.</li>
+    <li>At least 4 GB of RAM.</li>
+    <li>Working internet connection.</li>
+    <li>Dedication to learn</li>
+  </ol>
+</body>
+</html>
+
+Positions in CSS – 
+Q.1.Write code to position 5 equal-sized (50x50px) boxes A, B, C, D, E as shown.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Position Boxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box a">A</div>
+  <div class="box b">B</div>
+  <div class="box c">C</div>
+  <div class="box d">D</div>
+  <div class="box e">E</div>
+</body>
+</html>
+
+style.css:-
+body {
+  background-color: #e6faff;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  position: absolute;
+}
+.a {
+  left: 200px;
+  top: 200px;
+}
+.b {
+  left: 200px;
+  top: 140px; /* 60px above center of A (30px + 30px) */
+}
+.c {
+  left: 260px;
+  top: 140px;
+}
+.d {
+  left: 170px;
+  top: 260px;
+}
+.e {
+  left: 260px;
+  top: 260px;
+}
+
+Q.2.Explain the difference between Absolute and Relative positioning.
+Answer:
+Relative Positioning:
+Moves the element relative to its normal position.
+Space is still reserved in the layout.
+
+Absolute Positioning:
+Moves the element relative to the nearest positioned ancestor.
+No space is reserved in the layout.
+Completely removed from the normal document flow.
+
+Q.3:Create a card as shown in the picture. (Use only CSS float property for layout)
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="card-text">
+      <h3>The Earth!!!</h3>
+      <p>
+        Nature is Earth's masterpiece, a symphony of life composed through millennia.
+        Its landscapes whisper tales of ancient mountains, winding rivers, and flourishing forests,
+        revealing the planet's timeless beauty...
+      </p>
+    </div>
+    <div class="card-img">
+      <img src="nature.jpg" alt="Nature Image">
+    </div>
+  </div>
+</body>
+</html>
+
+style.css:-
+.card {
+  background-color: #f5f2d0;
+  padding: 20px;
+  width: 80%;
+  margin: 30px auto;
+  overflow: auto;
+}
+.card-text {
+  width: 70%;
+  float: left;
+}
+.card-img {
+  width: 25%;
+  float: right;
+}
+.card-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+Q.4:Create a simple header that sticks to the top of a webpage upon scrolling.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Header</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">LOGO</div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Pricing</a>
+      <a href="#">Content</a>
+      <a href="#">Terms and Condition</a>
+      <a href="#" class="btn">Get Started</a>
+    </nav>
+  </header>
+  <div class="content">
+    <h2>Heading</h2>
+    <p>Lorem ipsum dolor sit amet... (repeat for scroll)</p>
+    <h2>Heading 2</h2>
+    <p>Lorem ipsum dolor sit amet... (repeat for scroll)</p>
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+.btn {
+  background-color: gold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: black;
+}
+.content {
+  padding: 20px;
+  height: 2000px;
+}
+
+Q.5:Explain the z-index, with a code example.
+Answer:
+index.html:-
+<div class="box1">Box 1</div>
+<div class="box2">Box 2</div>
+
+style.css:
+.box1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  z-index: 1;
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  position: absolute;
+  left: 70px;
+  top: 70px;
+  z-index: 2;
+}
+
+Flexbox in CSS — 
+Q1:Describe the main differences between the CSS Flexbox layout model and the CSS Grid layout model.
+Answer:
+Flexbox:
+One-dimensional layout (row OR column).
+Better for aligning items in a single row/column.
+
+Grid:
+Two-dimensional layout (rows AND columns).
+Better for overall page layout and complex grids.
+
+Q2:Explain the role of the following key properties in the Flexbox layout model:
+Answer:
+justify-content – Aligns items horizontally (start, center, space-between, etc.).
+align-items – Aligns items vertically within the container.
+gap – Sets space between flex items.
+flex-direction – Sets main axis (row, column, etc.).
+flex-wrap – Allows items to wrap onto multiple lines.
+
+Q3:Write the code to center a div using CSS Flexbox.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
+
+style.css:-
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: lime;
+}
+
+Q.4:Build a pricing section to showcase premium plans (Free Plan, Basic Plan, Pro Plan) as shown in the image.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Section</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="pricing">
+    <div class="card">
+      <h3>Free Plan</h3>
+      <p>For personal</p>
+      <h1>$0</h1>
+      <ul>
+        <li>1 user</li>
+        <li>4 Web mails</li>
+        <li>Responsive Website</li>
+        <li>Free SSL</li>
+      </ul>
+      <button>Subscribe now</button>
+    </div>
+    <div class="card">
+      <h3>Basic Plan</h3>
+      <p>For small business</p>
+      <h1>$29</h1>
+      <ul>
+        <li>4 users</li>
+        <li>10 Web mails</li>
+        <li>Responsive Website</li>
+        <li>Free SSL</li>
+      </ul>
+      <button>Subscribe now</button>
+    </div>
+    <div class="card">
+      <h3>Pro Plan</h3>
+      <p>For enterprise</p>
+      <h1>$49</h1>
+      <ul>
+        <li>Unlimited users</li>
+        <li>Unlimited Web mails</li>
+        <li>Responsive Website</li>
+        <li>Free SSL + SEO</li>
+      </ul>
+      <button>Subscribe now</button>
+    </div>
+  </section>
+</body>
+</html>
+
+style.css:-
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6fc;
+}
+.pricing {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.card h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+.card ul li {
+  margin-bottom: 10px;
+}
+.card button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3b4ce2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+Q5:Build a clone of the IRCTC Ticket booking page as shown.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IRCTC Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="irctc-container">
+    <div class="left-section">
+      <img src="irctc-logo.png" alt="IRCTC Logo" class="logo">
+      <h2>Indian Railways</h2>
+      <p class="sub">Safety &nbsp; Security &nbsp; Punctuality</p>
+      <div class="form-box">
+        <div class="field-group">
+          <label>From</label>
+          <input type="text" value="Bangalore">
+        </div>
+        <div class="field-group">
+          <label>To</label>
+          <input type="text" value="Kasaragod">
+        </div>
+        <div class="field-group">
+          <label>Date</label>
+          <input type="text" value="01 Aug 23">
+        </div>
+        <div class="field-group">
+          <label>Class</label>
+          <input type="text" value="3A">
+        </div>
+        <div class="field-group">
+          <label>Seat Type</label>
+          <input type="text" value="TATKAL">
+        </div>
+        <button class="search-btn">Search Train</button>
+      </div>
+    </div>
+    <div class="right-section">
+      <img src="train.png" alt="Train Image" class="train-img">
+    </div>
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+.irctc-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+.left-section {
+  width: 45%;
+}
+.logo {
+  height: 50px;
+}
+.sub {
+  color: green;
+  font-weight: bold;
+}
+.form-box {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.field-group {
+  margin-bottom: 15px;
+}
+.field-group label {
+  display: block;
+  font-weight: bold;
+}
+.field-group input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.search-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.right-section .train-img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+Grid in CSS — 
+Q.1:Create an image gallery using a CSS grid.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="gallery">
+    <img src="img1.jpg" alt="">
+    <img src="img2.jpg" alt="">
+    <img src="img3.jpg" alt="">
+    <img src="img4.jpg" alt="">
+    <img src="img5.jpg" alt="">
+    <img src="img6.jpg" alt="">
+    <img src="img7.jpg" alt="">
+  </div>
+</body>
+</html>
+
+style.css:-
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+Q.2:Write code to arrange containers with texts A, B, C, and D using grid layout.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout Boxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box-grid">
+    <div class="item a">A</div>
+    <div class="item b">B</div>
+    <div class="item c">C</div>
+    <div class="item d">D</div>
+  </div>
+</body>
+</html>
+
+style.css:
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "a b"
+    "c d";
+  gap: 20px;
+  padding: 40px;
+}
+.item {
+  background-color: #fdd9a0;
+  font-size: 24px;
+  text-align: center;
+  padding: 30px 0;
+  border-radius: 8px;
+}
+.a { grid-area: a; }
+.b { grid-area: b; }
+.c { grid-area: c; }
+.d { grid-area: d; }
+
+Q.3:Explain the use of grid-auto-rows and grid-auto-columns with code examples.
+Answer:
+index.html:-
+<div class="auto-grid">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+style.css:-
+.auto-grid {
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-auto-columns: 100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.auto-grid div {
+  background-color: #ddd;
+  text-align: center;
+  line-height: 100px;
+}
+
+ Q.4:Write CSS to show numbers as shown in the figure, without altering the HTML file.
+Answer:
+style.css:-
+.container {
+  display: grid;
+  grid-template-areas:
+    "one one"
+    "two three";
+}
+.container div:nth-child(1) {
+  grid-area: one;
+}
+.container div:nth-child(2) {
+  grid-area: two;
+}
+.container div:nth-child(3) {
+  grid-area: three;
+}
+Ensure .container has 3 child <div> with numbers (1, 2, 3).
+
+Q.5:Explain the difference between justify-items and justify-self using code examples.
+Answer:
+justify-items – Aligns all items along horizontal axis.
+justify-self – Aligns individual item.
+
+style.css:-
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+.container div {
+  background: pink;
+  padding: 10px;
+}
+.container div:nth-child(2) {
+  justify-self: end;
+}
+
+Responsive Design —
+Q.1:Create a simple webpage with a header, a main content section, and a footer. Apply a media query that changes the background color of the header to blue when the screen width is less than 600px.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Design</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">Responsive Header</header>
+  <main class="main">Main Content</main>
+  <footer class="footer">Footer</footer>
+</body>
+</html>
+
+style.css:-
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.main {
+  padding: 20px;
+}
+.footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .header {
+    background-color: blue;
+    color: white;
+  }
+}
+
+Q.2:Create an image gallery with three images in a row. Use media queries to:
+Show 2 images in a row if screen width < 800px
+Show 1 image in a row if screen width < 500px
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="gallery">
+    <img src="city.jpg" alt="City">
+    <img src="city.jpg" alt="City">
+    <img src="city.jpg" alt="City">
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  margin: 0;
+  padding: 0;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+@media screen and (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+Q.3:Create a navigation bar with five links. Apply a media query that:
+Converts the navigation to a vertical list when screen width is < 768px
+Changes the background color to gray
+Answer:
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Navigation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+  </nav>
+</body>
+</html>
+
+style.css:-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+.navbar a {
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    background-color: gray;
+    align-items: center;
+  }
+}
+
+Q.4:Create a grid-based layout containing four grid items which rearranges them as the screen size changes.
+Answer:
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Grid Boxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box box1">Box1</div>
+    <div class="box box2">Box2</div>
+    <div class="box box3">Box3</div>
+    <div class="box box4">Box4</div>
+  </div>
+</body>
+</html>
+
+style.css:-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+.box {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0;
+  border-radius: 5px;
+}
+.box1 { background-color: red; }
+.box2 { background-color: green; }
+.box3 { background-color: blue; }
+.box4 { background-color: chocolate; }
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+Q.5:Create the below-given layout using the flexbox in CSS, which should adapt itself on a mobile screen as per the given below output.
+Answer:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .box1,
+    .box4 {
+      background-color: #333;
+      width: 10%;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .box2 {
+      background-color: mediumaquamarine;
+      flex: 1;
+    }
+    .box3 {
+      background-color: darkorange;
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .box1,
+      .box4 {
+        width: 100%;
+        height: 50px;
+      }
+      .content {
+        width: 100%;
+      }
+      .box2,
+      .box3 {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">Box1</div>
+    <div class="content">
+      <div class="box box2">Box2</div>
+      <div class="box box3">Box3</div>
+    </div>
+    <div class="box box4">Box4</div>
+  </div>
+</body>
+</html>
+
+Tailwind CSS-
+Q.1:Create a User login page interface that closely resembles the provided image using Tailwind CSS. The goal is to ensure that your implementation captures every visual detail and layout aspect depicted in the image while maintaining a full mobile responsiveness.
+Answer:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-white shadow-md rounded-lg flex flex-col xl:flex-row w-full max-w-6xl">
+    <div class="w-full xl:w-1/2 p-8">
+      <h2 class="text-2xl font-semibold text-center mb-2">Login</h2>
+      <p class="text-gray-600 text-center mb-6">Enter your credential to access your account</p>
+      <button class="w-full border border-gray-300 py-2 flex items-center justify-center gap-2 text-gray-700 rounded-md mb-6">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google Logo" />
+        Login with Google
+      </button>
+      <div class="flex items-center my-4">
+        <hr class="flex-grow border-t border-gray-300" />
+        <span class="mx-2 text-gray-400">Or</span>
+        <hr class="flex-grow border-t border-gray-300" />
+      </div>
+      <label class="block text-sm mb-1 font-medium">Email Address</label>
+      <input type="email" placeholder="email@gmail.com" class="w-full border border-gray-300 rounded-md p-2 mb-4" />
+      <div class="flex justify-between items-center">
+        <label class="block text-sm font-medium">Password</label>
+        <a href="#" class="text-sm text-blue-500">Forgot Password?</a>
+      </div>
+      <input type="password" placeholder="Password" class="w-full border border-gray-300 rounded-md p-2 mb-4" />
+      <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md mb-4">Login</button>
+      <p class="text-center text-sm">Don’t have an account? <a href="#" class="text-blue-600 font-medium">Register here</a></p>
+    </div>
+    <div class="hidden xl:flex items-center justify-center w-1/2 bg-white p-4">
+      <img src="https://img.freepik.com/free-photo/young-happy-woman-with-good-idea-sign-white-shirt-full-portrait_10881326.htm" alt="Woman Pointing" class="max-h-[500px] object-contain">
+    </div>
+  </div>
+</body>
+</html>
+
+Q.2:Create a responsive image gallery using Tailwind CSS. The gallery should display a grid of images that adjust their size and layout based on the screen size.
+Answer:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-xl font-semibold mb-4">Image Gallery</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <img src="your-image-link.jpg" alt="Image 1" class="w-full object-cover rounded shadow" />
+      <img src="your-image-link.jpg" alt="Image 2" class="w-full object-cover rounded shadow" />
+      <img src="your-image-link.jpg" alt="Image 3" class="w-full object-cover rounded shadow" />
+      <img src="your-image-link.jpg" alt="Image 4" class="w-full object-cover rounded shadow" />
+      <img src="your-image-link.jpg" alt="Image 5" class="w-full object-cover rounded shadow" />
+      <img src="your-image-link.jpg" alt="Image 6" class="w-full object-cover rounded shadow" />
+    </div>
+  </div>
+</body>
+</html>
+
+Q.3:Create a non-responsive dashboard using Tailwind CSS, where the dashboard should include a sidebar navigation menu and a main contain area.
+Feel free to use any icons from any place. Your goal is to design a visually appealing and user-friendly dashboard interface that is not responsive.
+Answer:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="font-sans bg-gray-100">
+  <div class="flex h-screen">
+    <aside class="w-64 bg-gray-900 text-white flex flex-col p-4">
+      <h1 class="text-xl font-bold mb-6">Dashboard</h1>
+      <nav class="flex-1">
+        <ul class="space-y-4">
+          <li class="flex items-center gap-2 text-white"><i class="ph ph-house"></i> Dashboard</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-users"></i> Team</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-briefcase"></i> Projects</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-calendar"></i> Calendar</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-file-text"></i> Documents</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-chart-bar"></i> Reports</li>
+        </ul>
+      </nav>
+      <div class="mt-6 border-t border-gray-700 pt-4">
+        <p class="text-xs uppercase text-gray-400 mb-2">Your Teams</p>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-circle"></i> PW Skills</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-circle"></i> PW Labs</li>
+          <li class="flex items-center gap-2 text-gray-300 hover:text-white"><i class="ph ph-circle"></i> PW - IOI</li>
+        </ul>
+      </div>
+    </aside>
+    <main class="flex-1 bg-white p-6">
+      <div class="flex justify-between items-center bg-gray-100 p-4 rounded shadow-sm mb-6">
+        <h2 class="text-lg font-semibold">Profile</h2>
+        <div class="flex gap-4">
+          <i class="ph ph-magnifying-glass text-xl text-gray-600 cursor-pointer"></i>
+          <i class="ph ph-bell text-xl text-gray-600 cursor-pointer"></i>
+        </div>
+      </div>
+      <div class="bg-gray-100 h-full rounded p-6">
+      </div>
+    </main>
+  </div>
+</body>
+</html>
