@@ -1,0 +1,1016 @@
+Q2.Write a program that grades students based on their marks
+Answer:
+function gradeStudent(marks) {
+  if (marks > 90) {
+    return "A Grade";
+  } else if (marks > 70 && marks <= 90) {
+    return "B Grade";
+  } else if (marks > 50 && marks <= 70) {
+    return "C Grade";
+  } else {
+    return "F Grade";
+  }
+}
+console.log(gradeStudent(95)); // A Grade
+console.log(gradeStudent(85)); // B Grade
+console.log(gradeStudent(65)); // C Grade
+console.log(gradeStudent(40)); // F Grade
+
+Q3. What are loops, and what do we need them? Explain different types of loops with their syntax and examples.
+// 1. For Loop
+for (let i = 1; i <= 5; i++) {
+  console.log("For Loop:", i);
+}
+
+// 2. While Loop
+let j = 1;
+while (j <= 5) {
+  console.log("While Loop:", j);
+  j++;
+}
+
+// 3. Do...While Loop
+let k = 1;
+do {
+  console.log("Do...While Loop:", k);
+  k++;
+} while (k <= 5);
+
+Q4. Generate numbers between any 2 given numbers
+const num1 = 10;
+const num2 = 25;
+for (let i = num1 + 1; i <= num2; i++) {
+  console.log(i);
+}
+
+Q5. Use the while loop to print numbers from 1 to 25 in ascending and descending order
+// Ascending
+let a = 1;
+while (a <= 25) {
+  console.log(a);
+  a++;
+}
+// Descending
+let b = 25;
+while (b >= 1) {
+  console.log(b);
+  b--;
+}
+
+Core JavaScript – 2
+1. Create an arrow function called square that takes a number as an argument and returns its square
+const square = (num) => num * num;
+console.log(square(5));
+console.log(square(9));
+
+2. Create a JavaScript function called generateGreeting that takes a name as an argument and returns a personalized greeting
+function generateGreeting(name) {
+  return `Hello, ${name}! Welcome to the JavaScript world.`;
+}
+console.log(generateGreeting("Alice"));
+console.log(generateGreeting("Bob"));
+console.log(generateGreeting("Charlie"));
+
+3. Write a JavaScript function called calculateTax that takes an income as an argument and returns the tax amount using closure
+function taxCalculator() {
+  return function (income) {
+    if (income <= 250000) {
+      return 0;
+    } else if (income <= 500000) {
+      return income * 0.05;
+    } else if (income <= 1000000) {
+      return income * 0.2;
+    } else {
+      return income * 0.3;
+    }
+  };
+}
+const calculateTax = taxCalculator();
+console.log(calculateTax(200000)); 
+console.log(calculateTax(400000)); 
+console.log(calculateTax(900000)); 
+console.log(calculateTax(1500000)); 
+
+Q4)Student Management System:-
+Q4.a. Add a Student: Create a function to add a new student to the array
+const students = [
+  { id: 1, firstName: "John", lastName: "Doe", age: 20, grade: "A" },
+  { id: 2, firstName: "Jane", lastName: "Smith", age: 22, grade: "B" },
+  { id: 3, firstName: "Bob", lastName: "Johnson", age: 19, grade: "A" },
+];
+function addStudent(student) {
+  students.push(student);
+}
+// Example:
+addStudent({ id: 4, firstName: "Alice", lastName: "Brown", age: 21, grade: "C" });
+console.log(students);
+
+Q4.b. Update Student Information by ID
+function updateStudent(id, newData) {
+  const student = students.find(s => s.id === id);
+  if (student) {
+    Object.assign(student, newData);
+  }
+}
+// Example:
+updateStudent(2, { age: 23, grade: "A" });
+console.log(students);
+
+Q4.c. Delete a Student by ID
+function deleteStudent(id) {
+  const index = students.findIndex(s => s.id === id);
+  if (index !== -1) {
+    students.splice(index, 1);
+  }
+}
+// Example:
+deleteStudent(3);
+console.log(students);
+
+Q4.d. List All Students
+function listStudents() {
+  students.forEach(student => console.log(student));
+}
+// Example:
+listStudents();
+
+Q4.e. Find Students by Grade
+function findByGrade(grade) {
+  return students.filter(student => student.grade === grade);
+}
+// Example:
+console.log(findByGrade("A"));
+
+Q4.f. Calculate Average Age
+function calculateAverageAge() {
+  const totalAge = students.reduce((sum, student) => sum + student.age, 0);
+  return totalAge / students.length;
+}
+// Example:
+console.log("Average Age:", calculateAverageAge());
+
+Question 5: Shopping Cart Operations
+Q5. Shopping cart add, remove, and edit items.
+let shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
+// Add 'Meat' to the beginning if not already added
+if (!shoppingCart.includes("Meat")) {
+  shoppingCart.unshift("Meat");
+}
+// Add 'Sugar' to the end if not already added
+if (!shoppingCart.includes("Sugar")) {
+  shoppingCart.push("Sugar");
+}
+// Remove 'Honey' if you're allergic
+const honeyIndex = shoppingCart.indexOf("Honey");
+if (honeyIndex !== -1) {
+  shoppingCart.splice(honeyIndex, 1);
+}
+// Modify 'Tea' to 'Green Tea'
+const teaIndex = shoppingCart.indexOf("Tea");
+if (teaIndex !== -1) {
+  shoppingCart[teaIndex] = "Green Tea";
+}
+console.log(shoppingCart);
+
+6. The following is an array of 10 students ages
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+ages.sort((a, b) => a - b);
+const minAge = ages[0];
+const maxAge = ages[ages.length - 1];
+console.log("Min age:", minAge);
+console.log("Max age:", maxAge);
+const mid = Math.floor(ages.length / 2);
+const median = ages.length % 2 === 0 ? (ages[mid - 1] + ages[mid]) / 2 : ages[mid];
+console.log("Median age:", median);
+const average = ages.reduce((sum, age) => sum + age, 0) / ages.length;
+console.log("Average age:", average);
+const range = maxAge - minAge;
+console.log("Range:", range);
+const minDiff = Math.abs(minAge - average);
+const maxDiff = Math.abs(maxAge - average);
+console.log("Min-Average Difference:", minDiff);
+console.log("Max-Average Difference:", maxDiff);
+
+7. Create a Map in JavaScript and perform the following operations:
+const myMap = new Map();
+// Add key-value pairs to the Map
+myMap.set("name", "Alice");
+myMap.set("age", 25);
+myMap.set("city", "Mumbai");
+// Check if a specific key exists
+console.log("Has 'age'?", myMap.has("age")); // true
+// Retrieve the value associated with a given key
+console.log("City:", myMap.get("city")); // Mumbai
+// Iterate through all key-value pairs
+myMap.forEach((value, key) => {
+  console.log(`${key}: ${value}`);
+});
+
+HOF and Functional Programming
+1. Write a function calculate that takes two numbers and a callback function
+function calculate(a, b, callback) {
+  return callback(a, b);
+}
+const add = (x, y) => x + y;
+const multiply = (x, y) => x * y;
+console.log(calculate(5, 3, add));      
+console.log(calculate(5, 3, multiply)); 
+
+2. Write a function delayedMessage that takes a message and a delay time
+function delayedMessage(message, delay) {
+  setTimeout(() => {
+    console.log(message);
+  }, delay);
+}
+delayedMessage("Hello after 2 seconds", 2000);
+
+3. Write a function printArrayElements that takes an array and logs each element using the forEach method
+function printArrayElements(arr) {
+  arr.forEach(element => console.log(element));
+}
+printArrayElements(["apple", "banana", "cherry"])
+
+4. Write a function sumEvenNumbers that takes an array and returns sum of all even numbers using reduce method
+function sumEvenNumbers(arr) {
+  return arr.reduce((sum, num) => num % 2 === 0 ? sum + num : sum, 0);
+}
+// Example:
+console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); 
+
+5. Write a function calculate (same as Q1) that takes two numbers and a callback function
+function calculate(a, b, callback) {
+  return callback(a, b);
+}
+const subtract = (x, y) => x - y;
+const divide = (x, y) => x / y;
+console.log(calculate(10, 4, subtract)); 
+console.log(calculate(20, 5, divide));   
+
+Closure and Destructuring-
+1. Write a function counter that returns an object with two methods: increment() and getCount()
+function counter() {
+  let count = 0;
+  return {
+    increment: () => count++,
+    getCount: () => count
+  };
+}
+// Example:
+const myCounter = counter();
+myCounter.increment();
+myCounter.increment();
+console.log(myCounter.getCount()); 
+
+2. Write a function calculateTotal that takes an object with properties price and quantity, and returns the total cost using destructuring.
+function calculateTotal({ price, quantity }) {
+  return price * quantity;
+}
+// Example:
+console.log(calculateTotal({ price: 100, quantity: 3 })); 
+
+3. You are given an array of numbers named myArray. Create a function that takes any number of arguments and adds them to the existing array. Use the spread and rest operator.
+let myArray = [1, 2, 3];
+function addToArray(...args) {
+  myArray = [...myArray, ...args];
+}
+addToArray(4, 5, 6);
+console.log(myArray); // [1, 2, 3, 4, 5, 6]
+
+4. Write a function multiplyAndSum that takes any number of arguments using the rest operator and returns the product of the first two arguments added to the sum of the rest.
+function multiplyAndSum(...args) {
+  const [a = 1, b = 1, ...rest] = args;
+  const sum = rest.reduce((acc, val) => acc + val, 0);
+  return (a * b) + sum;
+}
+// Example:
+console.log(multiplyAndSum(2, 3, 4, 5)); // (2*3)+9 = 15
+
+Git and GitHub
+Q1. Explain what version control is and its importance in software development
+Answer:
+Version control is a system that records changes to a file or set of files over time. It helps developers track modifications, collaborate with team members, and revert to earlier versions when needed. It is important because it improves collaboration, maintains code history, enables code reviews, and avoids conflicts in multi-developer environments.
+
+Q2. Explain the Git Workflow, including the staging area, working directory, and repository
+Answer:
+Working Directory: The local folder where you make changes to files.
+Staging Area (Index): Temporary area where changes are added using git add before committing.
+Repository: The .git folder where Git stores committed versions of the project.
+Git Workflow Steps:-
+Modify files in working directory
+Add changes to staging area using git add
+Commit changes using git commit
+Push to remote repository using git push
+
+Q3. Explain what .gitignore is and why it’s important in version control
+Answer:
+.gitignore is a file that tells Git which files or directories to ignore (not track). This is important to avoid committing sensitive files (like passwords), unnecessary files (e.g., logs, temporary files), or platform-specific files (e.g., .DS_Store, node_modules) to the repository.
+
+Q4. Briefly explain what GitHub is and how it facilitates collaboration and version control also name some alternatives to GitHub
+Answer:
+GitHub is a cloud-based platform for hosting Git repositories. It helps developers collaborate by offering tools like pull requests, issue tracking, and code reviews. It also provides a central place for sharing and contributing to open-source projects.
+Alternatives: GitLab, Bitbucket, SourceForge, Azure Repos.
+
+Q5. Describe the process of contributing to any open-source project on GitHub in a step-by-step manner
+Answer:
+Fork the repository to your GitHub account
+Clone the forked repo to your local machine
+Create a new branch for your changes
+Make changes and commit them
+Push the changes to your forked GitHub repo
+Open a Pull Request (PR) to the original repository
+Wait for code review and approval
+After approval, the PR is merged by the maintainer
+
+JavaScript DOM
+1. Explain the DOM and its role in Web development
+Answer:
+DOM (Document Object Model) is a programming interface for web documents. It represents the structure of an HTML page as a tree of objects that can be manipulated with JavaScript. Developers use the DOM to dynamically change content, structure, and style of a web page without reloading it.
+
+2. Explain the concept of event delegation and provide a scenario where it is beneficial.
+Answer:
+Event delegation is a technique where a single event listener is added to a parent element instead of multiple listeners on child elements. Events bubble up from child to parent, so the parent can handle events triggered by its children.
+Example Scenario:
+In a <ul> list with dynamic <li> items, instead of adding click to every <li>, we add one listener to <ul> and detect clicks on its children.
+
+3. Explain the concept of Event Bubbling in the DOM
+Answer:
+Event bubbling is the process where an event triggered on a child element propagates (bubbles) up through its parent elements. For example, clicking a button inside a <div> first fires the button's event, then the <div>'s, and so on up to the root.
+
+4. Explain the purpose of the addEventListener method in JavaScript and how it facilitates event handling in the DOM.
+Answer:
+addEventListener is used to attach event handlers to DOM elements. It allows multiple listeners for the same event type and gives better control (like once, capture phase). It helps manage interactivity in web apps like clicks, form submissions, keypresses, etc.
+
+document.getElementById("btn").addEventListener("click", () => {
+  alert("Button clicked!");
+});
+
+5. Create an HTML page with a button. Use JavaScript to display an alert when the button is clicked.
+<!DOCTYPE html>
+<html>
+  <head><title>Button Alert</title></head>
+  <body>
+    <button id="myButton">Click Me</button>
+    <script>
+      document.getElementById("myButton").addEventListener("click", () => {
+        alert("Hello! You clicked the button.");
+      });
+    </script>
+  </body>
+</html>
+
+6. Create a simple image carousel using HTML and JavaScript. Design a basic HTML structure with images, and use JavaScript to implement functionality that allows users to navigate through the images.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel</title>
+  <style>
+    img { width: 300px; height: 200px; display: block; margin: 10px auto; }
+    button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <img id="carousel" src="image1.jpg" alt="Carousel Image">
+  <div style="text-align: center;">
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+  </div>
+  <script>
+    const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+    let currentIndex = 0;
+    const imgElement = document.getElementById("carousel");
+
+    function showImage() {
+      imgElement.src = images[currentIndex];
+    }
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+  </script>
+</body>
+</html>
+
+7. Build a dynamic dropdown menu using HTML and JavaScript. Create an HTML structure for a navigation menu with dropdowns. Use JavaScript to toggle the visibility of dropdowns when the user hovers over menu items.
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    .submenu {
+      display: none;
+      margin-left: 20px;
+    }
+    li:hover > .submenu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#">Services</a>
+      <ul class="submenu">
+        <li>Submenu 4</li>
+        <li>Submenu 5</li>
+        <li>Submenu 6</li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</body>
+</html>
+
+8. Create a simple dynamic shopping list with the following features
+The item should appear in the list.
+Each item should be given a button that can be pressed to delete that item off the list.
+The input should be emptied and focused ready for you to enter another item
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping List</title>
+</head>
+<body>
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add Item</button>
+  <ul id="itemList"></ul>
+  <script>
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const value = input.value.trim();
+      if (value === "") return;
+      const li = document.createElement("li");
+      li.textContent = value + " ";
+      const btn = document.createElement("button");
+      btn.textContent = "Delete";
+      btn.onclick = () => li.remove();
+      li.appendChild(btn);
+      document.getElementById("itemList").appendChild(li);
+      input.value = "";
+      input.focus();
+    }
+  </script>
+</body>
+</html>
+
+Walkthrough With React
+Q1. Explain the potential SEO challenges and solutions associated with Single Page Applications (SPAs).
+Answer:
+SPAs dynamically load content using JavaScript, which search engine bots may not crawl properly. This can cause SEO issues like poor indexing and low visibility.
+Solutions include:
+Server-Side Rendering (SSR): Sends fully rendered HTML to bots.
+Pre-rendering: Generates static HTML for bots.
+Dynamic Rendering: Sends static HTML to bots and SPA to users.
+
+Q2. Explain the key differences and use cases between React’s Client-Side Rendering (CSR) and Server-Side Rendering (SSR). Provide examples of scenarios where each approach is advantageous, and discuss the challenges associated with using React in both contexts.
+Answer:
+Feature	Client-Side Rendering (CSR)	Server-Side Rendering (SSR)
+Render Timing	In browser	On server
+SEO	Poor by default	Better SEO
+Speed	Fast after first load	Fast initial load
+Use Case	Internal dashboards, SPAs	Blogs, e-commerce sites
+Examples:
+Use CSR for dynamic dashboards or user portals.
+Use SSR for SEO-focused apps like product pages.
+Challenges:
+CSR: Slower initial load, bad for bots.
+SSR: More complex setup, server load increases.
+
+Q3. Explain the difference between npm and npx using the create-react-app code example.
+Answer:
+npm installs packages globally or locally.
+npx executes a package without installing it globally.
+Example:
+npx create-react-app my-app
+Runs create-react-app without saving it to disk. Faster and cleaner for one-time use.
+
+Q4. Create a React component called “Login” without using JSX for its definition. This component should render an HTML structure that includes a form with input fields for a username and password. It should also have a button labeled “Submit.”
+import React from "react";
+function Login() {
+  return React.createElement(
+    "form",
+    null,
+    React.createElement("input", {
+      type: "text",
+      placeholder: "username",
+    }),
+    React.createElement("input", {
+      type: "password",
+      placeholder: "password",
+    }),
+    React.createElement("button", null, "Submit")
+  );
+}
+export default Login;
+
+5. Create a React component called “Product” using JSX. This component should render an HTML structure that includes a product image, price, name, and description. It should also have a button labeled “Buy Now.”
+import React from "react";
+const Product = () => {
+  return (
+    <div style={{ border: "1px solid #ccc", padding: "20px", width: "300px" }}>
+      <img
+        src="https://example.com/headphones.jpg"
+        alt="Headphones"
+        style={{ width: "100%" }}
+      />
+      <h3>Headphones | High Base Clear Sound</h3>
+      <p>
+        The flagship-level battery life for the all-new OnePlus Nord Buds 2r
+        delivers up to 38 hrs of non-stop music on a single charge.
+      </p>
+      <p><strong>$12</strong></p>
+      <button>Buy Now</button>
+    </div>
+  );
+};
+export default Product;
+Replace the image URL with your actual product image.
+
+Router & hooks
+1. Discuss the concept of hooks in React. Explain how they differ from class component lifecycle methods. Also, provide an example
+Answer:
+Hooks are functions that let you use React features (state, lifecycle, context) in functional components.
+Difference from class lifecycle methods:
+Hooks are used in functional components, whereas lifecycle methods (componentDidMount, etc.) are used in class components.
+Hooks give a cleaner, reusable way to manage state and side effects.
+Example using useState:
+import React, { useState } from "react";
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+2. Explain and discuss its syntax, purpose, and how it manages state in functional components for the following hooks
+useState
+Syntax:
+const [state, setState] = useState(initialValue);
+Purpose:
+To declare and manage local state in a functional component.
+
+useEffect
+Syntax:
+useEffect(() => {
+  // Side effect logic
+}, [dependency]);
+Purpose:
+To perform side effects (API calls, subscriptions) in functional components. Runs on mount, update, or dependency change.
+
+3. Create a global state management system using the Context API and useContext hook to build a theme toggle React mini project. Follow these steps to implement a light/dark theme toggle feature.
+1. Create a Theme Context
+import React from "react";
+const ThemeContext = React.createContext();
+export default ThemeContext;
+
+2. Create a Theme Provider
+import React, { useState } from "react";
+import ThemeContext from "./ThemeContext";
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+export default ThemeProvider;
+
+3. Use the ThemeProvider in Your App
+// App.js
+import React from "react";
+import ThemeProvider from "./ThemeProvider";
+import ThemedComponent from "./ThemedComponent";
+function App() {
+  return (
+    <ThemeProvider>
+      <ThemedComponent />
+    </ThemeProvider>
+  );
+}
+export default App;
+
+4. Create a Themed Component
+import React, { useContext } from "react";
+import ThemeContext from "./ThemeContext";
+const ThemedComponent = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const styles = {
+    backgroundColor: theme === "light" ? "#fff" : "#333",
+    color: theme === "light" ? "#000" : "#fff",
+    padding: "30px",
+    textAlign: "center",
+    minHeight: "100vh"
+  };
+  return (
+    <div style={styles}>
+      <h1>{theme === "light" ? "Light Theme" : "Dark Theme"}</h1>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>
+  );
+};
+export default ThemedComponent;
+
+Q.4. Set up a basic React Router v6 application with multiple pages and navigation.
+Answer:
+Step 1: Install react-router-dom
+npm install react-router-dom
+
+Step 2: App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | 
+        <Link to="/about">About</Link> | 
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+}
+export default App;
+
+Step 3: Components
+// Home.js
+export default function Home() {
+  return <h1>Home Page</h1>;
+}
+
+// About.js
+export default function About() {
+  return <h1>About Page</h1>;
+}
+
+// Contact.js
+export default function Contact() {
+  return <h1>Contact Page</h1>;
+}
+
+Form Handling & State Management
+Q1. Create a simple form with controlled components in React.
+Answer:
+import React, { useState } from "react";
+function LoginForm() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      setError("All fields are required!");
+    } else {
+      setError("");
+      console.log({ username, password });
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Username"
+      /><br />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      /><br />
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+export default LoginForm;
+
+Q2. Implement form validation using React state and conditional rendering.
+Answer:-
+import React, { useState } from "react";
+function RegistrationForm() {
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const validate = () => {
+    const newErrors = {};
+    if (!form.name || form.name.length < 3)
+      newErrors.name = "Name must be at least 3 characters.";
+    if (!form.email || !/\S+@\S+\.\S+/.test(form.email))
+      newErrors.email = "Invalid email.";
+    if (!form.password || form.password.length < 6)
+      newErrors.password = "Password must be at least 6 characters.";
+    return newErrors;
+  };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors(validate());
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length === 0) {
+      alert("Registration Successful!");
+      setSubmitted(true);
+      console.log(form);
+    } else {
+      setErrors(errs);
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        placeholder="Name"
+      />
+      {errors.name && <p>{errors.name}</p>}
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+      {errors.email && <p>{errors.email}</p>}
+      <input
+        name="password"
+        type="password"
+        value={form.password}
+        onChange={handleChange}
+        placeholder="Password"
+      />
+      {errors.password && <p>{errors.password}</p>}
+      <button type="submit" disabled={Object.keys(errors).length > 0}>
+        Register
+      </button>
+      {submitted && <p style={{ color: "green" }}>Form submitted successfully!</p>}
+    </form>
+  );
+}
+export default RegistrationForm;
+
+Q3. Set up Redux store, actions, and reducers for basic state management.
+npm install redux react-redux
+store.js
+import { createStore } from "redux";
+const initialState = { count: 0 };
+function counterReducer(state = initialState, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+const store = createStore(counterReducer);
+export default store;
+
+index.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Provider } from "react-redux";
+import store from "./store";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+Counter.js
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+function Counter() {
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+    </div>
+  );
+}
+export default Counter;
+
+MongoDB
+1. Understanding Schemas in MongoDB
+A schema in MongoDB defines the structure of documents within a collection. It sets rules like required fields, data types, default values, and validation logic.
+Discuss how schemas are defined and enforced in MongoDB using Mongoose (or any other ODM).
+In Mongoose, schemas are defined using mongoose.Schema(). These schemas enforce structure and validation rules on MongoDB documents through a model.
+
+Create a simple schema for a blog post, including fields for title, author, content, tags, and createdAt.
+const mongoose = require("mongoose");
+const blogSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  author: String,
+  content: String,
+  tags: [String],
+  createdAt: { type: Date, default: Date.now }
+});
+const Blog = mongoose.model("Blog", blogSchema);
+
+2. Model a simple e-commerce application...
+Collections: users, products, orders
+Use both embedded and referenced models
+// User Schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String
+});
+
+// Product Schema
+const productSchema = new mongoose.Schema({
+  name: String,
+  price: Number
+});
+
+// Order Schema (referencing and embedding)
+const orderSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // referenced
+  products: [{ name: String, quantity: Number }], // embedded
+  orderDate: Date
+});
+
+3. Creating and Dropping a Database in MongoDB
+Write a script to create a new database named shopDB.
+use shopDB
+db.createCollection("testCollection")
+Write a script to drop the shopDB database.
+
+use shopDB
+db.dropDatabase()
+
+4. Creating and Dropping a Collection in MongoDB
+Write a script to create a collection named products in shopDB.
+use shopDB
+db.createCollection("products")
+Write a script to drop the products collection.
+
+use shopDB
+db.products.drop()
+
+5. Create a sample document for a product collection, using at least five different data types.
+{
+  name: "Smartphone",
+  price: 499.99,
+  inStock: true,
+  tags: ["electronics", "mobile"],
+  details: { color: "black", warranty: "1 year" },
+  releaseDate: new Date()
+}
+
+Node.js
+1. Setting Up a Basic Node.js Server
+Task:
+Create a basic Node.js server that listens on port 3000.
+Respond with "Hello, World!" for requests to the root URL (/).
+Use the built-in http module to create the server.
+
+const http = require('http');
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+  }
+});
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000');
+});
+
+2. Working with Modules in Node.js
+Task:
+Explain what modules are in Node.js and why they are important.
+Modules are reusable blocks of code. Node.js uses CommonJS modules to split large apps into smaller, manageable parts.
+
+Create a custom module that exports a function to calculate the area of a rectangle.
+// area.js
+function area(length, width) {
+  return length * width;
+}
+module.exports = area;
+Import and use the module to calculate area.
+
+// main.js
+const area = require('./area');
+console.log("Area:", area(10, 5));
+
+3. Handling Asynchronous Operations in Node.js
+Task:
+Explain the difference between synchronous and asynchronous operations in Node.js.
+Synchronous operations block code execution until complete. Asynchronous operations run in the background and use callbacks/promises to notify completion.
+
+Create a script that reads a file asynchronously and logs its contents.
+const fs = require('fs');
+fs.readFile('example.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+4. Interacting with the File System
+Task:
+Create a script that writes a string to a new file.
+const fs = require('fs');
+fs.writeFileSync('data.txt', 'Hello from Node.js!');
+
+Append additional text to the same file.
+fs.appendFileSync('data.txt', '\nAppended line.');
+Read and log the contents of the file to the console.
+
+const content = fs.readFileSync('data.txt', 'utf8');
+console.log(content);
+
+5. Explain what Node.js is and its primary use cases.
+Answer:
+Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows you to run JavaScript outside the browser, especially for server-side development.
+Primary use cases:
+Building web servers & APIs
+Real-time applications (e.g., chat apps)
+Microservices
+Command-line tools
+File processing
+
+Express
+1. Explain Express.js and discuss why it is commonly used in web development.
+Answer:
+Express.js is a lightweight and flexible Node.js web application framework that provides a set of features to develop web and mobile applications. It simplifies server-side development with robust routing, middleware integration, and HTTP utility methods.
+Why it's commonly used:
+Minimalist but powerful.
+Easy routing system.
+Built-in middleware support.
+Easily integrates with databases and templating engines.
+Large community and ecosystem.
+
+2. Implement a basic Express.js server with multiple routes.
+Code:
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.get('/about', (req, res) => {
+  res.send('This is an Express.js server built by [Your Name].');
+});
+
+app.get('/api/users', (req, res) => {
+  const users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' }
+  ];
+  res.json(users);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+3. Implement protected routes using middleware in Express.js
+Code:
+const express = require('express');
+const app = express();
+const PORT = 3000;
+let isAuthenticated = false;
+function checkAuth(req, res, next) {
+  if (isAuthenticated) {
+    next(); // Allow access
+  } else {
+    res.redirect('/'); // Redirect if not authenticated
+  }
+}
+app.get('/', (req, res) => {
+  res.send('Welcome to the main page!');
+});
+app.get('/dashboard', checkAuth, (req, res) => {
+  res.send('Welcome to your dashboard!');
+});
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
