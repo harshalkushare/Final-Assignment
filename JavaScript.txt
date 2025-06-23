@@ -1014,3 +1014,62 @@ app.get('/dashboard', checkAuth, (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+Express App - 1
+
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+// In-memory data store
+let profiles = [];
+let currentId = 1;
+
+// 1. Create a User Profile (POST)
+app.post('/profiles', (req, res) => {
+  const { name, email, age } = req.body;
+  const newProfile = { id: currentId++, name, email, age };
+  profiles.push(newProfile);
+  res.json(newProfile);
+});
+
+// 2. Get All and One Profile (GET)
+app.get('/profiles', (req, res) => {
+  res.json(profiles);
+});
+
+app.get('/profiles/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const profile = profiles.find(p => p.id === id);
+  if (!profile) return res.status(404).json({ message: 'Profile not found' });
+  res.json(profile);
+});
+
+// 3. Update Profile (PUT)
+app.put('/profiles/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const { name, email, age } = req.body;
+  const profile = profiles.find(p => p.id === id);
+  if (!profile) return res.status(404).json({ message: 'Profile not found' });
+
+  profile.name = name;
+  profile.email = email;
+  profile.age = age;
+
+  res.json(profile);
+});
+
+// 4. Delete Profile (DELETE)
+app.delete('/profiles/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = profiles.findIndex(p => p.id === id);
+  if (index === -1) return res.status(404).json({ message: 'Profile not found' });
+
+  profiles.splice(index, 1);
+  res.json({ message: 'Profile deleted successfully' });
+});
+
+// Start server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
